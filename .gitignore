@@ -19,8 +19,6 @@ build/
 *.manifest
 *.spec
 
-*.pkl
-*.joblib
 
 *.log
 

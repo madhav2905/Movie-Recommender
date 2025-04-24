@@ -24,6 +24,4 @@ build/
 
 *.log
 
-data/*.csv
-
 .streamlit/secrets.toml

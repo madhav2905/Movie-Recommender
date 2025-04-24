@@ -1,0 +1,51 @@
+movieId,title,genres,year
+50,"Usual Suspects, The (1995)","['Crime', 'Mystery', 'Thriller']",1995
+176,Living in Oblivion (1995),['Comedy'],1995
+246,Hoop Dreams (1994),['Documentary'],1994
+260,Star Wars: Episode IV - A New Hope (1977),"['Action', 'Adventure', 'Sci-Fi']",1977
+318,"Shawshank Redemption, The (1994)","['Crime', 'Drama']",1994
+475,In the Name of the Father (1993),['Drama'],1993
+750,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964),"['Comedy', 'War']",1964
+858,"Godfather, The (1972)","['Crime', 'Drama']",1972
+898,"Philadelphia Story, The (1940)","['Comedy', 'Drama', 'Romance']",1940
+904,Rear Window (1954),"['Mystery', 'Thriller']",1954
+905,It Happened One Night (1934),"['Comedy', 'Romance']",1934
+912,Casablanca (1942),"['Drama', 'Romance']",1942
+922,Sunset Blvd. (a.k.a. Sunset Boulevard) (1950),"['Drama', 'Film-Noir', 'Romance']",1950
+926,All About Eve (1950),['Drama'],1950
+930,Notorious (1946),"['Film-Noir', 'Romance', 'Thriller']",1946
+951,His Girl Friday (1940),"['Comedy', 'Romance']",1940
+1041,Secrets & Lies (1996),['Drama'],1996
+1104,"Streetcar Named Desire, A (1951)",['Drama'],1951
+1178,Paths of Glory (1957),"['Drama', 'War']",1957
+1197,"Princess Bride, The (1987)","['Action', 'Adventure', 'Comedy', 'Fantasy', 'Romance']",1987
+1204,Lawrence of Arabia (1962),"['Adventure', 'Drama', 'War']",1962
+1209,Once Upon a Time in the West (C'era una volta il West) (1968),"['Action', 'Drama', 'Western']",1968
+1212,"Third Man, The (1949)","['Film-Noir', 'Mystery', 'Thriller']",1949
+1213,Goodfellas (1990),"['Crime', 'Drama']",1990
+1217,Ran (1985),"['Drama', 'War']",1985
+1221,"Godfather: Part II, The (1974)","['Crime', 'Drama']",1974
+1235,Harold and Maude (1971),"['Comedy', 'Drama', 'Romance']",1971
+1248,Touch of Evil (1958),"['Crime', 'Film-Noir', 'Thriller']",1958
+1267,"Manchurian Candidate, The (1962)","['Crime', 'Thriller', 'War']",1962
+1276,Cool Hand Luke (1967),['Drama'],1967
+1719,"Sweet Hereafter, The (1997)",['Drama'],1997
+1927,All Quiet on the Western Front (1930),"['Action', 'Drama', 'War']",1930
+2360,"Celebration, The (Festen) (1998)",['Drama'],1998
+2959,Fight Club (1999),"['Action', 'Crime', 'Drama', 'Thriller']",1999
+3030,Yojimbo (1961),"['Action', 'Adventure']",1961
+3429,Creature Comforts (1989),"['Animation', 'Comedy']",1989
+3435,Double Indemnity (1944),"['Crime', 'Drama', 'Film-Noir']",1944
+3451,Guess Who's Coming to Dinner (1967),['Drama'],1967
+3468,"Hustler, The (1961)",['Drama'],1961
+3508,"Outlaw Josey Wales, The (1976)","['Action', 'Adventure', 'Drama', 'Thriller', 'Western']",1976
+7156,"Fog of War: Eleven Lessons from the Life of Robert S. McNamara, The (2003)","['Documentary', 'War']",2003
+8014,"Spring, Summer, Fall, Winter... and Spring (Bom yeoreum gaeul gyeoul geurigo bom) (2003)",['Drama'],2003
+48516,"Departed, The (2006)","['Crime', 'Drama', 'Thriller']",2006
+55721,Elite Squad (Tropa de Elite) (2007),"['Action', 'Crime', 'Drama', 'Thriller']",2007
+58559,"Dark Knight, The (2008)","['Action', 'Crime', 'Drama', 'IMAX']",2008
+80906,Inside Job (2010),['Documentary'],2010
+92535,Louis C.K.: Live at the Beacon Theater (2011),['Comedy'],2011
+96829,"Hunt, The (Jagten) (2012)",['Drama'],2012
+116897,Wild Tales (2014),"['Comedy', 'Drama', 'Thriller']",2014
+168252,Logan (2017),"['Action', 'Sci-Fi']",2017

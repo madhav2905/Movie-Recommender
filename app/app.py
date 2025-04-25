@@ -11,11 +11,10 @@ models_path = os.path.join(BASE_DIR, "models")
 data_path = os.path.join(BASE_DIR, "data")
 
 item_cf_path = os.path.join(models_path, 'item_cf_model.pkl')
-if not os.path.exists("models/item_cf_model.pkl"):
+if not os.path.exists(item_cf_path):
     file_id = '1QnrBzcWmV0AB7-Wwp5dNYNX0g53LK6vZ'
     url = f'https://drive.google.com/uc?id={file_id}'
-    output = 'models/item_cf_model.pkl'
-    gdown.download(url, output, quiet=False)
+    gdown.download(url, item_cf_path, quiet=False)
 
 svd_model = joblib.load(os.path.join(models_path, 'svd_model.pkl'))
 user_cf_model = joblib.load(os.path.join(models_path, 'user_cf_model.pkl'))

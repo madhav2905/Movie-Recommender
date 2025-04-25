@@ -28,7 +28,7 @@ if 'rating' not in popular_movies.columns:
         avg_ratings = ratings.groupby('movieId')['rating'].mean().reset_index()
         popular_movies = popular_movies.merge(avg_ratings, on='movieId', how='left')
 
-st.title("\U0001F3AC Movie Rating Predictor & Recommender")
+st.title("\U0001F3AC WatchWise AI: Movie Rating Predictor & Recommender")
 
 model_choice = st.selectbox("Choose a model", [
     "SVD", "User-Based CF", "Item-Based CF", "Content-Based", "Popularity-Based"

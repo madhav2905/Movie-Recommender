@@ -1,24 +1,29 @@
-import streamlit as st
 import pandas as pd
+import streamlit as st
 import joblib
 import gdown
 import os
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+models_path = os.path.join(BASE_DIR, "models")
+data_path = os.path.join(BASE_DIR, "data")
+
+item_cf_path = os.path.join(models_path, 'item_cf_model.pkl')
 if not os.path.exists("models/item_cf_model.pkl"):
     file_id = '1QnrBzcWmV0AB7-Wwp5dNYNX0g53LK6vZ'
     url = f'https://drive.google.com/uc?id={file_id}'
     output = 'models/item_cf_model.pkl'
     gdown.download(url, output, quiet=False)
 
-svd_model = joblib.load('models/svd_model.pkl')
-user_cf_model = joblib.load('models/user_cf_model.pkl')
-item_cf_model = joblib.load('models/item_cf_model.pkl')
-movie_features = joblib.load('models/movie_features.pkl')
+svd_model = joblib.load(os.path.join(models_path, 'svd_model.pkl'))
+user_cf_model = joblib.load(os.path.join(models_path, 'user_cf_model.pkl'))
+item_cf_model = joblib.load(item_cf_path)
+movie_features = joblib.load(os.path.join(models_path, 'movie_features.pkl'))
 
-movies = pd.read_csv('data/movies.csv')
-popular_movies = pd.read_csv('data/popular_movies.csv')
+movies = pd.read_csv(os.path.join(data_path, 'movies.csv'))
+popular_movies = pd.read_csv(os.path.join(data_path, 'popular_movies.csv'))
 
 if 'rating' not in popular_movies.columns:
     if 'avg_rating' in popular_movies.columns:

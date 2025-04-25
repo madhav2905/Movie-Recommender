@@ -1,28 +1,24 @@
-import pandas as pd
 import streamlit as st
+import pandas as pd
 import joblib
 import gdown
 import os
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-models_path = os.path.join(BASE_DIR, "models")
-data_path = os.path.join(BASE_DIR, "data")
-
-item_cf_path = os.path.join(models_path, 'item_cf_model.pkl')
-if not os.path.exists(item_cf_path):
+if not os.path.exists("models/item_cf_model.pkl"):
     file_id = '1QnrBzcWmV0AB7-Wwp5dNYNX0g53LK6vZ'
     url = f'https://drive.google.com/uc?id={file_id}'
-    gdown.download(url, item_cf_path, quiet=False)
+    output = 'models/item_cf_model.pkl'
+    gdown.download(url, output, quiet=False)
 
-svd_model = joblib.load(os.path.join(models_path, 'svd_model.pkl'))
-user_cf_model = joblib.load(os.path.join(models_path, 'user_cf_model.pkl'))
-item_cf_model = joblib.load(item_cf_path)
-movie_features = joblib.load(os.path.join(models_path, 'movie_features.pkl'))
+svd_model = joblib.load('models/svd_model.pkl')
+user_cf_model = joblib.load('models/user_cf_model.pkl')
+item_cf_model = joblib.load('models/item_cf_model.pkl')
+movie_features = joblib.load('models/movie_features.pkl')
 
-movies = pd.read_csv(os.path.join(data_path, 'movies.csv'))
-popular_movies = pd.read_csv(os.path.join(data_path, 'popular_movies.csv'))
+movies = pd.read_csv('data/movies.csv')
+popular_movies = pd.read_csv('data/popular_movies.csv')
 
 if 'rating' not in popular_movies.columns:
     if 'avg_rating' in popular_movies.columns:
@@ -67,18 +63,18 @@ if st.button("Recommend Similar Movies"):
         sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
         sim_scores = sim_scores[1:num_recommendations+1]
         movie_indices = [i[0] for i in sim_scores]
-        st.subheader(f"\U0001F3A5 Movies similar to **{movie_name}**:")
+        st.subheader(f"\U0001F3A5 Movies similar to *{movie_name}*:")
         for idx in movie_indices:
-            st.write(f"**{movies.iloc[idx]['title']}**")
+            st.write(f"{movies.iloc[idx]['title']}")
 
     elif model_choice == "Popularity-Based":
         st.subheader("\U0001F525 Most Popular Movies:")
         for _, row in popular_movies.head(num_recommendations).iterrows():
             rating = row.get('rating', row.get('avg_rating', 'N/A'))
             if isinstance(rating, (int, float)):
-                st.write(f"**{row['title']}** (Average Rating: {rating:.2f})")
+                st.write(f"{row['title']}** (Average Rating: {rating:.2f})")
             else:
-                st.write(f"**{row['title']}**")
+                st.write(f"{row['title']}")
 
     else:
         all_movie_ids = movies['movieId'].unique()
@@ -97,7 +93,7 @@ if st.button("Recommend Similar Movies"):
                     continue
 
         top_n = sorted(scores, key=lambda x: x[1], reverse=True)[:num_recommendations]
-        st.subheader(f"\U0001F3A5 Movies similar to **{movie_name}**:")
+        st.subheader(f"\U0001F3A5 Movies similar to *{movie_name}*:")
         for mid, rating in top_n:
             similar_title = movies[movies['movieId'] == mid]['title'].values[0]
-            st.write(f"**{similar_title}** — Predicted Rating: {rating:.2f}")
+            st.write(f"{similar_title}** — Predicted Rating: {rating:.2f}")

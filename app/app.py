@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 import gdown
 import os
-import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 
 if not os.path.exists("models/item_cf_model.pkl"):
